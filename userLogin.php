@@ -10,7 +10,7 @@ $scope = $original_url_params['scope'];
 echo sprintf("Scope: %s%s", $scope, "\r\n");
 $original_url_params['username'] = 'bob';
 $original_url_params['confirmation'] = 'bob';
-$original_url_arr['query'] = http_build_query($original_url_params);
+$original_url_arr['query'] = http_build_query($original_url_params, null, ini_get('arg_separator.output'), PHP_QUERY_RFC3986);
 
 $original_url = sprintf("%s://%s%s?%s", $original_url_arr['scheme'], $original_url_arr['host'], $original_url_arr['path'], $original_url_arr['query']);
 ?>
