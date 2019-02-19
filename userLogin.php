@@ -7,6 +7,7 @@ $original_url_arr = parse_url($original_url);
 print_r($original_url_arr);
 parse_str($original_url_arr['query'], $original_url_params);
 $scope = $original_url_params['scope'];
+echo sprintf("Scope: %s%s", $scope, "\r\n");
 $original_url_params['username'] = 'bob';
 $original_url_params['confirmation'] = 'bob';
 $original_url_arr['query'] = http_build_query($original_url_params);
